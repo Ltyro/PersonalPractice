@@ -2,7 +2,6 @@ package kriging;
 
 import org.ujmp.core.Matrix;
 
-import kriging.models.Model;
 import kriging.models.ModelImpl;
 
 public class Variogram {
