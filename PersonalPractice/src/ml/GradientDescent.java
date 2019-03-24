@@ -1,6 +1,6 @@
 package ml;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * 小试梯度下降
