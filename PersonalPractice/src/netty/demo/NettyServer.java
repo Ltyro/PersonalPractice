@@ -23,7 +23,7 @@ import io.netty.handler.logging.LoggingHandler;
 public class NettyServer {
 	
 	public static void main(String[] args) {
-		int port = 1966;
+		int port = 8007;
 		EventLoopGroup bossGroup = new NioEventLoopGroup(1);
 	    EventLoopGroup workerGroup = new NioEventLoopGroup();
 	    try {

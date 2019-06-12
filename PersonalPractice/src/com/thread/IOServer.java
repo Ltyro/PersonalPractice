@@ -5,8 +5,6 @@ import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import com.tool.util;
-
 public class IOServer {
     public static void main(String[] args) throws Exception {
 
@@ -18,7 +16,7 @@ public class IOServer {
                 try {
                     // (1) 阻塞方法获取新的连接
                     Socket socket = serverSocket.accept();
-                    util.p("get a connection");
+                    System.out.println("get a connection");
                     // (2) 每一个新的连接都创建一个线程，负责读取数据
                     new Thread(() -> {
                         try {
