@@ -7,16 +7,34 @@
 	<artifactId>PersonalPractice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
-		<dependency>
-			<groupId>org.ujmp</groupId>
-			<artifactId>ujmp-core</artifactId>
-			<version>0.3.0</version>
-		</dependency>
+		<!-- <dependency> <groupId>org.ujmp</groupId> <artifactId>ujmp-core</artifactId> 
+			<version>0.3.0</version> </dependency> -->
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
 			<version>4.1.8.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>9.0.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>9.0.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.11</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.9</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
