@@ -5,8 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.io.File;
 import java.io.IOException;
 
-import javax.servlet.http.HttpServlet;
-
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
@@ -16,6 +14,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.junit.Test;
 
 public class TomcatStarter {
 
@@ -25,14 +24,20 @@ public class TomcatStarter {
 
 	public static void main(String[] args) {
 		runTomcat();
+		
 	}
 
+	@Test
+	public void testGet() {
+		getSomeThing();
+	}
+	
 	public static void runTomcat() {
 
 		tomcat = new Tomcat();
 		tomcat.setPort(8080);
 		String tmpDirPath = System.getProperty("user.dir") + File.separator + WEBAPP_PATH;
-		Context ctxt = tomcat.addWebapp("/sqrt", tmpDirPath);
+		Context ctxt = tomcat.addContext("/sqrt", tmpDirPath);
 		Tomcat.addServlet(ctxt, "servletTest", new ServletTest());
 		ctxt.addServletMappingDecoded("/", "servletTest");
 		try {
@@ -40,7 +45,7 @@ public class TomcatStarter {
 		} catch (LifecycleException e) {
 			e.printStackTrace();
 		}
-
+		tomcat.getServer().await();
 	}
 
 	public static void getSomeThing() {
