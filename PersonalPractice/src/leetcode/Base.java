@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.Arrays;
 
 public class Base {
 
@@ -9,6 +10,10 @@ public class Base {
 
 		ListNode(int x) {
 			val = x;
+		}
+		@Override
+		public String toString() {
+			return val + "";
 		}
 	}
 	
@@ -31,4 +36,21 @@ public class Base {
 		}
 	}
 	
+	public static void printMatrix(int[][] matrix) {
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				System.out.print(matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void printArray(int[] nums) {
+//		for (int i = 0; i < nums.length; i++) {
+//			System.out.print(i);
+//			if (i < nums.length - 1)
+//				System.out.print(", ");
+//		}
+		System.out.println(Arrays.toString(nums));
+	}
 }
