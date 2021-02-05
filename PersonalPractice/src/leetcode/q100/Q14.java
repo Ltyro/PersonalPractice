@@ -1,76 +1,52 @@
 package leetcode.q100;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
-
-import leetcode.q100.Q12.ListNode;
 
 /**
- * 链表相邻反转
+ * 最长公共前缀
+ * https://leetcode-cn.com/problems/longest-common-prefix/
+ * 
  * 
  * @author Zaoji_Lai
  * @since 1.0
- * @date 2020年4月7日
+ * @date 2021年1月26日
  */
 public class Q14 {
 
 	public static void main(String[] args) {
-		ListNode head = new ListNode(1);
-		head.next = new ListNode(2);
-		head.next.next = new ListNode(3);
-		head.next.next.next = new ListNode(4);
-//		head.next.next.next.next = new ListNode(4);
-		print(swapPairs(head));
+		Q14 q = new Q14();
+		String[] strs = {"dog","racecar","car"};
+		String ret = q.longestCommonPrefix(strs);
+		System.out.println(ret);
 	}
 
-	public static ListNode swapPairs(ListNode head) {
-		if(head == null)
-			return null;
-		if (head.next == null)
-			return head;
-		ListNode temp = head, pre = null, next = head.next;
-		head = head.next;
-		boolean odd = true;
-		while (next != null) {
-			if (odd) {
-				if(pre != null)
-					pre.next = next;
-				temp.next = next.next;
-				next.next = temp;
-				ListNode t = temp;
-				temp = next;
-				next = t;
-			} 
-			
-			pre = temp;
-			temp = next;
-			next = next.next;
-
-			odd = !odd;
+	public String longestCommonPrefix(String[] strs) {
+		if (strs == null || strs.length == 0)
+			return "";
+		StringBuilder sb = new StringBuilder();
+		int i = 0;
+		boolean brk = false;;
+		while (!brk) {
+			Character c = null;
+			for (String s : strs) {
+				if (s.length() < i + 1) {
+					brk = true;
+					break;
+				}
+				if (c == null)
+					c = s.charAt(i);
+				else if (s.charAt(i) != c) {
+					brk = true;
+					break;
+				}
+			}
+			if (!brk)
+				sb.append(c);
+			i++;
 		}
-		return head;
-	}
+		return sb.toString();
+    }
 
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-		
-		public String toString() {
-			return val + "";
-		}
-	}
-
-	public static void print(ListNode head) {
-		ListNode temp = head;
-		while (temp != null) {
-			System.out.print(temp.val + " ");
-			temp = temp.next;
-		}
-	}
 }

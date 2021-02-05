@@ -1,55 +1,82 @@
 package leetcode.q100;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 /**
- * 括号生成
+ * 13. 罗马数字转整数 
+ * https://leetcode-cn.com/problems/roman-to-integer/
+ * 
+ * 字符 数值 
+ * I 1 
+ * V 5 
+ * X 10 
+ * L 50 
+ * C 100 
+ * D 500 
+ * M 1000
+ * 
  * 
  * @author Zaoji_Lai
  * @since 1.0
- * @date 2020年4月7日
+ * @date 2021年1月26日
  */
 public class Q13 {
 
 	public static void main(String[] args) {
-		System.out.println(generateParenthesis(4));
+		Q13 q = new Q13();
+		// MCMXCIV
+		int ret = q.romanToInt("MCMXCIV");
+		System.out.println(ret);
 	}
 
-	public static List<String> generateParenthesis(int n) {
-		List<String> ans = new ArrayList<>();
-		if (n == 0)
-            return ans;
-		List<List<String>> total_l = new ArrayList<>();
-		List<String> l = new ArrayList<>();
-		l.add(null);
-        total_l.add(l);    // 0组括号时记为None
-        l = new ArrayList<>();
-        l.add("()");
-        total_l.add(l);    // 1组括号只有一种情况
-        for (int i = 2; i < n + 1; i++) {    // 开始计算i组括号时的括号组合
-            l = new ArrayList<>();  
-            for(int j = 0; j < i; j++) {    			// 开始遍历 p q ，其中p+q=i-1 , j 作为索引
-                List<String> now_list1 = total_l.get(j);    // p = j 时的括号组合情况
-                List<String> now_list2 = total_l.get(i-1-j);    // q = (i-1) - j 时的括号组合情况
-                for (String k1 : now_list1) {  
-                    for (String k2 : now_list2) {
-                        if (k1 == null)
-                            k1 = "";
-                        if (k2 == null)
-                            k2 = "";
-                        String el = "(" + k1 + ")" + k2;
-                        l.add(el);    // 把所有可能的情况添加到 l 中
-                    }
-                }
-            }
-            total_l.add(l);    // l这个list就是i组括号的所有情况，添加到total_l中，继续求解i=i+1的情况
-        }
-		return total_l.get(n);
+	public int romanToInt(String s) {
+		int ret = 0;
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i), nextC = (i == s.length() - 1) ? '0' : s.charAt(i + 1);
+			
+			if (c == 'M') {
+				ret += 1000;
+			} else if (c == 'D') {
+				ret += 500;
+			} else if (c == 'C') {
+				if (nextC == 'M') {
+					ret += 900;
+					i++;
+				} else if(nextC == 'D') {
+					ret += 400;
+					i++;
+				} else {
+					ret += 100;
+				}
+			} else if (c == 'L') {
+				ret += 50;
+			} else if (c == 'X') {
+				if (nextC == 'C') {
+					ret += 90;
+					i++;
+				} else if(nextC == 'L') {
+					ret += 40;
+					i++;
+				} else {
+					ret += 10;
+				}
+			} else if (c == 'V') {
+				ret += 5;
+			} else if (c == 'I') {
+				if (nextC == 'X') {
+					ret += 9;
+					i++;
+				} else if(nextC == 'V') {
+					ret += 4;
+					i++;
+				} else {
+					ret += 1;
+				}
+			}
+		}
+		return ret;
     }
-
-	
 
 }
