@@ -13,9 +13,9 @@ public class Q23 extends Base {
 
 	public static void main(String[] args) {
     	Q23 q = new Q23();
-    	ListNode l1 = q.constructNodeList(1, 4, 5);
-    	ListNode l2 = q.constructNodeList(1, 3, 4);
-    	ListNode l3 = q.constructNodeList(2, 6);
+    	ListNode l1 = q.newNodeList(1, 4, 5);
+    	ListNode l2 = q.newNodeList(1, 3, 4);
+    	ListNode l3 = q.newNodeList(2, 6);
     	ListNode ret = q.mergeKLists(new ListNode[]{l1, l2, l3});
         q.printNodeList(ret);
 

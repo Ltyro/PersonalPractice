@@ -14,8 +14,8 @@ public class Q21 extends Base {
 	
     public static void main(String[] args) {
     	Q21 q = new Q21();
-    	ListNode l1 = q.constructNodeList(-9, 3);
-    	ListNode l2 = q.constructNodeList(5, 7);
+    	ListNode l1 = q.newNodeList(-9, 3);
+    	ListNode l2 = q.newNodeList(5, 7);
     	ListNode ret = q.mergeTwoLists(l1, l2);
         q.printNodeList(ret);
 

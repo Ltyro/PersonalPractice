@@ -43,7 +43,7 @@ public class Base {
 		
 	}
 
-	public ListNode constructNodeList(int... vs) {
+	public static ListNode newNodeList(int... vs) {
 		if (vs.length == 0)
 			return null;
 		ListNode temp, head;
@@ -55,10 +55,10 @@ public class Base {
 		return head;
 	}
 
-	public void printNodeList(ListNode head) {
+	public static void printNodeList(ListNode head) {
 		ListNode temp = head;
 		while (temp != null) {
-			System.out.print(temp.val + " ");
+			print(temp.val + " ");
 			temp = temp.next;
 		}
 	}
@@ -66,18 +66,26 @@ public class Base {
 	public static void printMatrix(int[][] matrix) {
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
-				System.out.print(matrix[i][j] + " ");
+				print(matrix[i][j] + " ");
 			}
-			System.out.println();
+			print("\n");
+		}
+	}
+
+	public static void printMatrix(char[][] matrix) {
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				print(matrix[i][j] + " ");
+			}
+			print("\n");
 		}
 	}
 
 	public static void printArray(int[] nums) {
-		// for (int i = 0; i < nums.length; i++) {
-		// System.out.print(i);
-		// if (i < nums.length - 1)
-		// System.out.print(", ");
-		// }
-		System.out.println(Arrays.toString(nums));
+		print(Arrays.toString(nums) + "\n");
+	}
+
+	private static void print(Object o) {
+		System.out.print(o);
 	}
 }

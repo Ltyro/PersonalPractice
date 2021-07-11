@@ -36,7 +36,7 @@ public class Q61 extends Base {
 	}
 
 	public void run() {
-		ListNode n1 = constructNodeList(0, 1, 2);
+		ListNode n1 = newNodeList(0, 1, 2);
 		ListNode afterRotate = rotateRight(n1, 4);
 		printNodeList(afterRotate);
 	}

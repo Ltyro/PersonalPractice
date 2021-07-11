@@ -23,7 +23,7 @@ public class Q92 extends Base {
 
 	public static void main(String[] args) {
 		Q92 q = new Q92();
-		ListNode head = q.constructNodeList(1, 2, 3, 4, 5);
+		ListNode head = q.newNodeList(1, 2, 3, 4, 5);
 		ListNode result = q.reverseBetween(head, 3, 4);
 		q.printNodeList(result);
 	}
