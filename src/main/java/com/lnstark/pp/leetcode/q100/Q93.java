@@ -1,10 +1,10 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
+
+import com.lnstark.pp.leetcode.Base;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
-
-import leetcode.Base;
 
 /**
  * 给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。

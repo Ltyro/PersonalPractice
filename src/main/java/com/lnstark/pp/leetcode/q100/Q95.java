@@ -1,9 +1,9 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
+
+import com.lnstark.pp.leetcode.Base;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import leetcode.Base;
 
 /**
  * 	给定一个整数 n，生成所有由 1 ... n 为节点所组成的 二叉搜索树 。

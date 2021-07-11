@@ -1,4 +1,4 @@
-package datastructure;
+package com.lnstark.pp.datastructure;
 
 public class LMap<K, V> {
 

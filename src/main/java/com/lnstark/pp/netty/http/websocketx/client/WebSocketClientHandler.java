@@ -35,7 +35,7 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
-package netty.http.websocketx.client;
+package com.lnstark.pp.netty.http.websocketx.client;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;

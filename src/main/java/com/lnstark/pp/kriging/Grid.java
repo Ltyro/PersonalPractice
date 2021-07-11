@@ -1,4 +1,4 @@
-package kriging;
+package com.lnstark.pp.kriging;
 
 public class Grid {
 

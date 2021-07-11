@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package netty.discard;
+package com.lnstark.pp.netty.discard;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

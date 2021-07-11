@@ -1,6 +1,6 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
 
-import leetcode.Base;
+import com.lnstark.pp.leetcode.Base;
 
 /**
  * 给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。

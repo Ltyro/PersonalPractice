@@ -1,4 +1,4 @@
-package ml;
+package com.lnstark.pp.ml;
 //
 //import org.junit.Test;
 

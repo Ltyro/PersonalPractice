@@ -1,4 +1,4 @@
-package kriging.models;
+package com.lnstark.pp.kriging.models;
 
 public interface Model {
 	double excuteModel(double h, double nugget, double range, double sill, double A);

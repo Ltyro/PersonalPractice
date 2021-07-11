@@ -1,4 +1,4 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
 
 /**
  * 下一个排列

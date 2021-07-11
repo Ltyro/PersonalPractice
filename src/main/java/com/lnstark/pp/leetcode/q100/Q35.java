@@ -1,6 +1,6 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
 
-import leetcode.Base;
+import com.lnstark.pp.leetcode.Base;
 
 /**
  * Q35 https://leetcode-cn.com/problems/search-insert-position/

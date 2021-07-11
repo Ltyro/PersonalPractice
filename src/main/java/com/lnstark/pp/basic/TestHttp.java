@@ -1,4 +1,4 @@
-package basic;
+package com.lnstark.pp.basic;
 
 import java.net.MalformedURLException;
 

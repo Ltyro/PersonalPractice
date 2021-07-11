@@ -1,6 +1,6 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
 
-import leetcode.Base;
+import com.lnstark.pp.leetcode.Base;
 
 /**
  * 给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的中位数。

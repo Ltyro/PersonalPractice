@@ -1,4 +1,4 @@
-package leetcode;
+package com.lnstark.pp.leetcode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package netty.http.helloworld;
+package com.lnstark.pp.netty.http.helloworld;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;

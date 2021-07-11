@@ -1,4 +1,4 @@
-package main.java.com.lnstark.pp.datastructure;
+package com.lnstark.pp.datastructure;
 
 import java.util.function.Consumer;
 

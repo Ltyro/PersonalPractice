@@ -1,4 +1,4 @@
-package com.tomcat;
+package com.lnstark.pp.others.tomcat;
 
 //import static org.junit.Assert.assertEquals;
 

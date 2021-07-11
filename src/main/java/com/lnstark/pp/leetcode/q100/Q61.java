@@ -1,6 +1,6 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
 
-import leetcode.Base;
+import com.lnstark.pp.leetcode.Base;
 
 /**
  * 给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。

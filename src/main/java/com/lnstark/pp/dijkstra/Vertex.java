@@ -1,4 +1,4 @@
-package dijkstra;
+package com.lnstark.pp.dijkstra;
 
 public class Vertex implements Comparable<Vertex>{
 

@@ -1,4 +1,4 @@
-package netty.demo;
+package com.lnstark.pp.netty.demo;
 
 import java.util.ArrayList;
 

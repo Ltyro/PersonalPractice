@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package netty.http.websocketx.benchmarkserver;
+package com.lnstark.pp.netty.http.websocketx.benchmarkserver;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

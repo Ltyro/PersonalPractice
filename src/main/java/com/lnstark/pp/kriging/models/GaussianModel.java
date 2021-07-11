@@ -1,4 +1,4 @@
-package kriging.models;
+package com.lnstark.pp.kriging.models;
 
 public class GaussianModel implements Model{
 

@@ -1,4 +1,4 @@
-package com.tool;
+package com.lnstark.pp.tool;
 
 public class util {
 	public static void p(Object o) {

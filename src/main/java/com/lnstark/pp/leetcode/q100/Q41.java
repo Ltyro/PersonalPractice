@@ -1,4 +1,4 @@
-package main.java.com.lnstark.pp.leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
 
 /**
  * Q41 缺失的第一个正数

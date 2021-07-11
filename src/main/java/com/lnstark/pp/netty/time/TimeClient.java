@@ -1,4 +1,4 @@
-package netty.time;
+package com.lnstark.pp.netty.time;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

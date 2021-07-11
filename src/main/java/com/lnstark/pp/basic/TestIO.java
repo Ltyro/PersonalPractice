@@ -1,4 +1,4 @@
-package basic;
+package com.lnstark.pp.basic;
 
 public class TestIO extends Exception{
 	

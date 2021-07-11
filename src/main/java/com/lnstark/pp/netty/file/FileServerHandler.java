@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package netty.file;
+package com.lnstark.pp.netty.file;
 
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;

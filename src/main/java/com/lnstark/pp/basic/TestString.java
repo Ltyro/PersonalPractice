@@ -1,4 +1,4 @@
-package basic;
+package com.lnstark.pp.basic;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

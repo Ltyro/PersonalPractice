@@ -1,4 +1,4 @@
-package com.objects;
+package com.lnstark.pp.others.jvm;
 
 public class TestProtected implements Cloneable {
 

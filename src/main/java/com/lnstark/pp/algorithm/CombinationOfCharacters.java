@@ -1,4 +1,4 @@
-package algorithm;
+package com.lnstark.pp.algorithm;
 
 import java.util.List;
 

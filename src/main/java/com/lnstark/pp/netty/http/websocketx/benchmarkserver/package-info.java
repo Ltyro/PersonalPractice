@@ -24,4 +24,4 @@
  * <p>You can also test it with a web socket client. Send web socket traffic to
  * ws://localhost:8080/websocket.
  */
-package netty.http.websocketx.benchmarkserver;
+package com.lnstark.pp.netty.http.websocketx.benchmarkserver;

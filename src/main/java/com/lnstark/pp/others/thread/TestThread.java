@@ -1,4 +1,4 @@
-package com.thread;
+package com.lnstark.pp.others.thread;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

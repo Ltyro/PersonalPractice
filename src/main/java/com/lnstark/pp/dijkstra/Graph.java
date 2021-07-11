@@ -1,4 +1,4 @@
-package dijkstra;
+package com.lnstark.pp.dijkstra;
 
 import java.util.ArrayList;
 import java.util.List;

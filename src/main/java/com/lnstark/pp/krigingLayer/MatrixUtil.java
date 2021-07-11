@@ -1,4 +1,4 @@
-package krigingLayer;
+package com.lnstark.pp.krigingLayer;
 
 import java.util.Arrays;
 

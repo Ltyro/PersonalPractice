@@ -1,5 +1,6 @@
-package main.java.com.lnstark.pp.others.jvm;
+package com.lnstark.pp.others.jvm;
 
+import com.lnstark.pp.others.objects.Car;
 import org.openjdk.jol.info.ClassLayout;
 
 /**

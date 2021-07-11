@@ -1,4 +1,4 @@
-package main.java.com.lnstark.pp.others.jvm;
+package com.lnstark.pp.others.objects;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.thread;
+package com.lnstark.pp.others.thread;
 
 public class MyThreadLocal {
 	

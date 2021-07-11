@@ -1,4 +1,4 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
 
 /**
  * Divide Two Integers

@@ -1,9 +1,9 @@
-package leetcode.q100;
+package com.lnstark.pp.leetcode.q100;
+
+import com.lnstark.pp.leetcode.Base;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import leetcode.Base;
 
 /**
  * 
