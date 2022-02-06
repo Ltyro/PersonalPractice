@@ -1,4 +1,4 @@
-package com.lnstark.pp.leetcode.q100;
+package com.lnstark.pp.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;

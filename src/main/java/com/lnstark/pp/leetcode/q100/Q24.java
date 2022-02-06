@@ -1,5 +1,7 @@
 package com.lnstark.pp.leetcode.q100;
 
+import com.lnstark.pp.leetcode.Base;
+
 /**
  * 两两交换链表中的节点
  * 
@@ -7,7 +9,7 @@ package com.lnstark.pp.leetcode.q100;
  * @since 1.0
  * @date 2020年4月7日
  */
-public class Q24 {
+public class Q24 extends Base {
 
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
@@ -15,7 +17,7 @@ public class Q24 {
 		head.next.next = new ListNode(3);
 		head.next.next.next = new ListNode(4);
 //		head.next.next.next.next = new ListNode(4);
-		print(swapPairs(head));
+		printNodeList(swapPairs(head));
 	}
 
 	public static ListNode swapPairs(ListNode head) {
@@ -46,24 +48,4 @@ public class Q24 {
 		return head;
 	}
 
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-		
-		public String toString() {
-			return val + "";
-		}
-	}
-
-	public static void print(ListNode head) {
-		ListNode temp = head;
-		while (temp != null) {
-			System.out.print(temp.val + " ");
-			temp = temp.next;
-		}
-	}
 }

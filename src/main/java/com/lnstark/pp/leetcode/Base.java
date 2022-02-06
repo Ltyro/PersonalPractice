@@ -61,6 +61,7 @@ public class Base {
 			print(temp.val + " ");
 			temp = temp.next;
 		}
+		System.out.println();
 	}
 
 	public static void printMatrix(int[][] matrix) {

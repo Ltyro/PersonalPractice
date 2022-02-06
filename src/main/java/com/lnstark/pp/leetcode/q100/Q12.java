@@ -1,5 +1,7 @@
 package com.lnstark.pp.leetcode.q100;
 
+import com.lnstark.pp.leetcode.Base;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
  * @since 1.0
  * @date 2020年4月7日
  */
-public class Q12 {
+public class Q12 extends Base {
 
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
@@ -57,13 +59,4 @@ public class Q12 {
 		}
 	}
 	
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-	}
-
 }
