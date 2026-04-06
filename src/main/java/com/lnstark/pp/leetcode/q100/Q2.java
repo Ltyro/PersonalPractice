@@ -23,45 +23,32 @@ public class Q2 extends Base {
 	}
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		ListNode n1 = l1, n2 = l2;
-		int jw = 0, temp = 0;
-		ListNode ret = null, head = null;
-		while (n1 != null && n2 != null) {
-			int sum = n1.val + n2.val + jw;
+		ListNode tmp = null;
+		ListNode root = null;
+		// 进位
+		int jw = 0;
+		// 余数
+		int ys = 0;
+		while (l1 != null || l2 != null) {
+			int n1 = l1 == null ? 0 : l1.val;
+			int n2 = l2 == null ? 0 : l2.val;
+			int sum = n1 + n2 + jw;
 			jw = sum / 10;
-			temp = sum % 10;
-			if (head == null) {
-				ret = new ListNode(temp);
-				head = ret;
+			ys = sum % 10;
+			if (tmp == null) {
+				tmp = new ListNode(ys);
+				root = tmp;
 			} else {
-				ret.next = new ListNode(temp);
-				ret = ret.next;
+				tmp.next = new ListNode(ys);
+				tmp = tmp.next;
 			}
-			n1 = n1.next;
-			n2 = n2.next;
+			l1 = l1 == null ? null : l1.next;
+			l2 = l2 == null ? null : l2.next;
 		}
-		while (n1 != null) {
-			int sum = n1.val + jw;
-			jw = sum / 10;
-			temp = sum % 10;
-			ret.next = new ListNode(temp);
-			ret = ret.next;
-			n1 = n1.next;
+		if (jw > 0) {
+			tmp.next = new ListNode(jw);
 		}
-		while (n2 != null) {
-			int sum = n2.val + jw;
-			jw = sum / 10;
-			temp = sum % 10;
-			ret.next = new ListNode(temp);
-			ret = ret.next;
-			n2 = n2.next;
-		}
-		if (jw != 0) {
-			ret.next = new ListNode(jw);
-			ret = ret.next;
-		}
-		return head;
-
+		return root;
 	}
 
 }

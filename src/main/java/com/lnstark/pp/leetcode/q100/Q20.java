@@ -1,45 +1,47 @@
 package com.lnstark.pp.leetcode.q100;
 
 import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
 
 /**
  * 20. 有效的括号
  * 
  * @author Zaoji_Lai
  * @since 1.0
- * @date 2021年1月27日
+ * @date 2026年4月6日
  */
 public class Q20 {
 
-	
+	private Map<Character, Character> pair = Map.of(
+			'(', ')', '[', ']', '{', '}'
+	);
+
     public static void main(String[] args) {
     	Q20 q = new Q20();
-    	boolean ret = q.isValid("(]");
+    	boolean ret = q.isValid("([])");
         System.out.println(ret);
 
     }
-    
 
-    public boolean isValid(String s) {
-    	LinkedList<Character> l = new LinkedList<>();
-    	for (char c : s.toCharArray()) {
-    		if (l.isEmpty()
-    				|| c == '(' || c == '[' || c == '{') {
-    			l.add(c);
-    		} else if (getPair(l.removeLast()) != c) {
-    			return false;
-    		}
-    	}
-    	return l.isEmpty();
-    }
+	public boolean isValid(String s) {
+		Stack<Character> stack = new Stack<>();
+		for (Character c : s.toCharArray()) {
+			if (isLeft(c)) {
+				stack.push(c);
+			} else if (stack.isEmpty() || !isPair(stack.pop(), c)){
+				return false;
+			}
+		}
+		return stack.isEmpty();
+	}
 
-    
-    private char getPair(char c) {
-    	switch(c) {
-    		case '(' : return ')';
-    		case '[' : return ']';
-    		case '{' : return '}';
-    	}
-    	return ' ';
-    }
+	private boolean isLeft(Character c) {
+		return Set.of('(', '[', '{').contains(c);
+	}
+
+	private boolean isPair(Character left, Character right) {
+		return right.equals(pair.get(left));
+	}
 }

@@ -1,53 +1,65 @@
 package com.lnstark.pp.leetcode.q100;
 
-import java.math.BigDecimal;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * 实现 pow(x, n) ，即计算 x 的 n 次幂函数。
- * 
- * 示例 1:
- * 
- * 输入: 2.00000, 10 输出: 1024.00000 
- * 
- * 示例 2:
- * 
- * 输入: 2.10000, 3 输出: 9.26100 
- * 
- * 示例 3:
- * 
- * 输入: 2.00000, -2 输出: 0.25000 解释: 2-2 = 1/22 = 1/4 = 0.25 
- * 
- * 说明:
- * 
- * -100.0 < x < 100.0 n 是 32 位有符号整数，其数值范围是 [−231, 231 − 1] 。
- * 
+ * https://leetcode.cn/problems/powx-n/description/
  * 
  * 
  * @author Zaoji_Lai
  * @since 1.0
- * @date 2020年9月16日
+ * @date 2026年3月16日
  */
 public class Q50 {
 
 	public static void main(String[] args) {
-		double d = 1.00001;
-		int n = 12345;
+		double d = 2;
+		int n = -2147483648;
 		double r = myPow(d, n);
 		System.out.println(r);
 	}
 
     public static double myPow(double x, int n) {
-        long N = n;
-        return N >= 0 ? quickMul(x, N) : 1.0 / quickMul(x, -N);
+        if (n == 0) return 1;
+        long absN = n;
+        absN = Math.abs(absN);
+        long i = 1;
+        double tmp = x;
+        long left = absN;
+        List<Double> list = new ArrayList<>();
+        Map<Long, Double> cache = new HashMap<>();
+        while (left > 0) {
+            if ((i << 1) < left) {
+                i <<= 1;
+                Double cacheV = cache.get(i);
+                if (cacheV == null) {
+                    tmp *= tmp;
+                    cache.put(i, tmp);
+                } else {
+                    tmp = cacheV;
+                }
+            } else {
+                list.add(tmp);
+                left -= i;
+                tmp = x;
+                i = 1;
+            }
+
+        }
+        double c = 1;
+        for (Double e : list) {
+            c *= e;
+        }
+        if (n < 0) {
+            c = 1 / c;
+        }
+        return c;
     }
 
-	public static double quickMul(double x, long N) {
-        if (N == 0) {
-            return 1.0;
-        }
-        double y = quickMul(x, N / 2);
-        return N % 2 == 0 ? y * y : y * y * x;
-    }
 
 
 }

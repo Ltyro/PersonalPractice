@@ -3,7 +3,9 @@ package com.lnstark.pp.leetcode.q100;
 import com.lnstark.pp.leetcode.Base;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 3. 无重复字符的最长子串
@@ -17,21 +19,29 @@ public class Q3 extends Base {
 
 	public static void main(String[] args) {
 		Q3 q = new Q3();
-		System.out.println(q.lengthOfLongestSubstring("abcabcbb"));
+		System.out.println(q.lengthOfLongestSubstring("abcbecbb"));
 	}
 
 	public int lengthOfLongestSubstring(String s) {
-		Map<Character, Integer> map = new HashMap<>();
-		int max = 0, left = 0;
-		for (int i = 0; i < s.length(); i++) {
-			Character c = s.charAt(i);
-			if (map.containsKey(c)) {
-				left = Math.max(left, map.get(c) + 1);
+		int maxLen = 0;
+		Set<Character> charSet = new HashSet<>();
+		for (int l = 0, r = 0 ; r < s.length() ; r++) {
+			//当前考虑的元素
+			while (l <= r && check(charSet, s.charAt(r))) {//区间[left,right]不符合题意
+				//扩展左边界
+				charSet.remove(s.charAt(l));
+				l++;
 			}
-			map.put(c, i);
-			max = Math.max(max, i - left + 1);
+			//区间[left,right]符合题意，统计相关信息
+			charSet.add(s.charAt(r));
+			if (maxLen < charSet.size())
+				maxLen = charSet.size();
 		}
-		return max;
+		return maxLen;
+	}
+
+	private boolean check(Set<Character> charSet, Character c) {
+		return charSet.contains(c);
 	}
 
 }

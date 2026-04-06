@@ -7,56 +7,57 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Remove Nth Node From End of List
+ * https://leetcode.cn/problems/integer-to-roman/description/
  * 
  * @author Zaoji_Lai
  * @since 1.0
- * @date 2020年4月7日
+ * @date 2026年3月31日
  */
 public class Q12 extends Base {
 
 	public static void main(String[] args) {
-		ListNode head = new ListNode(1);
-		head.next = new ListNode(2);
-//		head.next.next = new ListNode(3);
-//		head.next.next.next = new ListNode(4);
-//		head.next.next.next.next = new ListNode(5);
-		int n = 2;
-		head = removeNthFromEnd(head, n);
-		print(head);
+		String head = new Q12().intToRoman(1994);
+		System.out.println(head);
 	}
 
-	public static ListNode removeNthFromEnd(ListNode head, int n) {
-		ListNode temp = head;
-		int length = 1;
-		while (temp.next != null) {
-			temp = temp.next;
-			length++;
+	public String intToRoman(int num) {
+		StringBuilder sb = new StringBuilder();
+		int cs = num / 1000;
+		if (cs > 0) {
+			for (int i = 0; i < cs; i++)
+				sb.append("M");
 		}
-		if(n < 0 || n > length)
-			return head;
-		if(length == 1 && n == 1)
-			return null;
-		ListNode pre = null;
-		temp = head;
-		int i = 0;
-		while (i++ + n < length) {
-			pre = temp;
-			temp = temp.next;
+		cs = num / 100 % 10;
+
+		if (cs > 0) {
+			sb.append(subProcess(cs, "C", "D", "M"));
 		}
-		if(pre == null)
-			head = temp.next;
-		else
-			pre.next = temp.next;
-		return head;
+		cs = num / 10 % 10;
+		if (cs > 0) {
+			sb.append(subProcess(cs, "X", "L", "C"));
+		}
+		cs = num % 10;
+		if (cs > 0) {
+			sb.append(subProcess(cs, "I", "V", "X"));
+		}
+		return sb.toString();
 	}
 
-	public static void print(ListNode head) {
-		ListNode temp = head;
-		while (temp != null) {
-			System.out.print(temp.val + " ");
-			temp = temp.next;
+	private String subProcess(int cs, String c1, String c5, String c10) {
+		StringBuilder sb = new StringBuilder();
+		if (cs == 4) {
+			return c1 + c5;
+		} else if (cs == 9) {
+			return c1 + c10;
+		} else if (cs < 4) {
+			for (int i = 0; i < cs; i++)
+				sb.append(c1);
+		} else {
+			sb.append(c5);
+			for (int i = 0; i < cs - 5; i++)
+				sb.append(c1);
 		}
+		return sb.toString();
 	}
-	
+
 }

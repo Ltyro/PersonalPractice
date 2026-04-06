@@ -1,67 +1,49 @@
 package com.lnstark.pp.leetcode.q100;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
- * Divide Two Integers
+ * https://leetcode.cn/problems/3sum/description/
  * 
  * @author Zaoji_Lai
  * @since 1.0
- * @date 2020年4月9日
+ * @date 2026年3月13日
  */
 public class Q15 {
 
 	public static void main(String[] args) {
-		int dividend = -214748348;
-		int divisor = -13;
-		System.out.println(divide(dividend, divisor));
+        int[] input = {-2,0,1,1,2};
+		System.out.println(new Q15().threeSum(input));
 	}
 
-	public static int divide(int a, int b) {
-        // a = -2^31, b = -1, a/b = 2^31
-        if (a == Integer.MIN_VALUE && b == -1) return Integer.MAX_VALUE;
-        // a = -2^31, b = -2^31, a/b = 1
-        if (a == Integer.MIN_VALUE && b == Integer.MIN_VALUE) return 1;
-        // a != -2^31, b = -2^31, a/b = 0
-        if (b == Integer.MIN_VALUE) return 0;
-        // a = -2^31, b != -2^31:  a <= a + abs(b), fix = b > 0 ? -1 : 1
-        int fix = 0;
-        if (a == Integer.MIN_VALUE) {
-            if (b > 0) {
-                a += b;
-                fix = -1;
-            } else {
-                a -= b;
-                fix = 1;
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> ret = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            int j = i + 1, k = nums.length - 1;
+            while (k > j) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum == 0) {
+                    ret.add(List.of(nums[i], nums[j], nums[k]));
+                    do j++;
+                    while (k > j && nums[j] == nums[j - 1]);
+                    do k--;
+                    while (k > j && nums[k] == nums[k + 1]);
+                } else if (sum > 0) {
+                    do k--;
+                    while (k > j && nums[k] == nums[k + 1]);
+                } else {
+                    do j++;
+                    while (k > j && nums[j] == nums[j - 1]);
+                }
             }
         }
-        boolean neg = false;
-        if (a < 0) {
-            a = -a;
-            neg = !neg;
-        }
-        if (b < 0) {
-            b = -b;
-            neg = !neg;
-        }
-        int result = 0;
-        while (a >= b) {
-            int x = b;
-            int r = 1;
-            while (x <= (a>>1)) {
-                x <<= 1;
-                r <<= 1;
-            }
-            a -= x;
-            result += r;
-        }
-        return (neg ? -result : result) + fix;
+        return ret;
     }
 
 	
-	public static int divide1(int dividend, int divisor) {
-		long ans = (long)dividend / (long)divisor;
-		if(ans < Integer.MIN_VALUE || ans > Integer.MAX_VALUE)
-			return Integer.MAX_VALUE;
-		return (int) ans;
-	}
 
 }
